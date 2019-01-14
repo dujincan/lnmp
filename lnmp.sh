@@ -380,6 +380,6 @@ case $1 in
         php
         ;;
     *)
-        cat $lnmp/README.md
+        action "Usage:$0 {lnmp|ningx|mysql|php}" /bin/false 
 esac
 

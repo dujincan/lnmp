@@ -5,12 +5,15 @@ bash lnmp.sh {lnmp|nginx|mysql|php}
 
 # 变量定义
 tools=/server/tools  软件解压目录
+
 apps=/application    软件安装目录
+
 log=/tmp/lnmp.log    软件安装过程的log
 
-
 mysql=mysql-5.7.24   mysql压缩包名字去掉tar.gz
+
 boost=boost_1_59_0   # boost压缩包名字去掉tar.gz
+
 mysqluser=mysql      # 运行mysql的用户
 # data=/data/mysql     # mysql数据目录
 # dbrootpwd=dbrootpwd  # mysql root密码

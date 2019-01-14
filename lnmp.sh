@@ -208,6 +208,7 @@ function mysql() {
                 action "mysql change root passwd successful" /bin/true
                 echo "root:$dbrootpwd" >/tmp/password.log
                 echo "please check password.log"
+                echo ""
             else
                 action "mysql change root passwd fail" /bin/false
                 echo "please check $log"

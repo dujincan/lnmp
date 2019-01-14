@@ -10,26 +10,28 @@
 ####################################################
 . /etc/init.d/functions
 
-# system vars
-tools=/server/tools
-apps=/application
-log=/tmp/lnmp.log
+tools=/server/tools  # 软件解压目录
+apps=/application    # 软件安装目录
+log=/tmp/lnmp.log    # 软件安装过程的log
 
-# mysql vars
-mysql=mysql-5.7.24
-boost=boost_1_59_0
-mysqluser=mysql
-data=/data/mysql
-dbrootpwd=dbrootpwd
 
-# nginx vars
-nginx=nginx-1.15.8
-nginxuser=www
-lnmp=`pwd`
+mysql=mysql-5.7.24   # mysql压缩包名字去掉tar.gz
+boost=boost_1_59_0   # boost压缩包名字去掉tar.gz
+mysqluser=mysql      # 运行mysql的用户
+data=/data/mysql     # mysql数据目录
+dbrootpwd=dbrootpwd  # mysql root密码
 
-# php vars
-php=php-7.3.0
-libzip=libzip-1.2.0
+
+nginx=nginx-1.15.8   # nginx压缩包名字去掉tar.gz
+nginxuser=www        # 运行nginx的用户
+lnmp=`pwd`           # 脚本和软件压缩包存储目录
+
+
+php=php-7.3.0        # php压缩包名字去掉tar.gz
+libzip=libzip-1.2.0  # libzip压缩包名字去掉tar.gz 
+
+
+
 function nginx() {
     # tar nginx
     [ -d $tools ] || mkdir -p $tools
@@ -129,7 +131,6 @@ function mysql() {
         echo "please check $log"
         exit $retval
     fi
-
 
     # tar mysql pkg
     tar xf $lnmp/${mysql}.tar.gz -C ${tools}/ &>$log && tar xf ${boost}.tar.gz -C ${tools}/ &>$log
@@ -379,6 +380,6 @@ case $1 in
         php
         ;;
     *)
-        action "Usage:$0 {lnmp|nginx|mysql|php}" /bin/false 
+        cat $lnmp/README.md
 esac
 

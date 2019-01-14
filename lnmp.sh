@@ -130,7 +130,8 @@ function mysql() {
         exit $retval
     fi
 
-     tar mysql pkg
+
+    # tar mysql pkg
     tar xf $lnmp/${mysql}.tar.gz -C ${tools}/ &>$log && tar xf ${boost}.tar.gz -C ${tools}/ &>$log
     retval=$?
     if [ $retval -eq 0 ]

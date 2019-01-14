@@ -348,6 +348,18 @@ function lnmp() {
     nginx
     mysql
     php
+    \cp -f $lnmp/nginx.conf $apps/nginx/conf/nginx.conf
+    $apps/nginx/sbin/nginx -s reload &>$log
+    retval=$?
+    if [ $retval -eq 0 ]
+    then
+        action "lnmp deploy successful" /bin/true
+    else
+        action "nginx reload fail" /bin/false
+        echo "please check $log"
+        exit $retval
+    fi
+    
 }
 
 

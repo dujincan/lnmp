@@ -1,7 +1,10 @@
 # Centos 7.4 根据参数自动部署lnmp、nginx、mysql、php
 # 
 # 使用方法
+将nginx、mysql、php、bootst、libzip的压缩包及nginx与mysql配置文件拷贝到lnmp目录
+
 bash lnmp.sh {lnmp|nginx|mysql|php}
+
 
 # 变量定义
 tools=/server/tools  # 软件解压目录

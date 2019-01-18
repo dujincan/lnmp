@@ -27,7 +27,7 @@ nginxuser=www        # 运行nginx的用户
 lnmp=`pwd`           # 脚本和软件压缩包存储目录
 
 
-php=php-7.3.0        # php压缩包名字去掉tar.gz
+php=php-7.3.1        # php压缩包名字去掉tar.gz
 libzip=libzip-1.2.0  # libzip压缩包名字去掉tar.gz 
 
 
@@ -133,7 +133,7 @@ function mysql() {
     fi
 
     # tar mysql pkg
-    tar xf $lnmp/${mysql}.tar.gz -C ${tools}/ &>$log && tar xf ${boost}.tar.gz -C ${tools}/ &>$log
+    tar xf $lnmp/${mysql}.tar.gz -C ${tools}/ &>$log && tar xf $lnmp/${boost}.tar.gz -C ${tools}/ &>$log
     retval=$?
     if [ $retval -eq 0 ]
     then
